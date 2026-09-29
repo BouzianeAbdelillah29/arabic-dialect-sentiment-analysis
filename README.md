@@ -13,19 +13,21 @@ Classifying sentiment in dialectal Arabic social media comments is a hard NLP pr
 ## Approach
 
 1. **Exploration & preprocessing** (`notebooks/01_data_exploration.ipynb`) — cleaning and normalization of dialectal text, exploratory analysis: sentiment distribution, text-length distributions per class
-2. **Bag-of-Words** (`notebooks/02_bag_of_words.ipynb`) — BoW features with scikit-learn, XGBoost and Keras classifiers → up to ~88% accuracy
-3. **TF-IDF** (`notebooks/03_tfidf.ipynb`) — TF-IDF features with the same classifier suite → up to ~89% accuracy
-4. **Word2Vec + AraVec** (`notebooks/04_word2vec_aravec.ipynb`) — pre-trained AraVec Arabic embeddings with neural classifiers → up to ~88% accuracy
+2. **Bag-of-Words** (`notebooks/02_bag_of_words.ipynb`) — BoW features with scikit-learn, XGBoost and Keras classifiers → up to 87.8% accuracy (XGBoost)
+3. **TF-IDF** (`notebooks/03_tfidf.ipynb`) — TF-IDF features with the same classifier suite → up to 88.6% accuracy (linear SVM)
+4. **Word2Vec + AraVec** (`notebooks/04_word2vec_aravec.ipynb`) — pre-trained AraVec Arabic embeddings with neural classifiers → up to 88.6% accuracy (neural network)
+
 
 ## Results
 
-| Representation     | Best test accuracy |
-|--------------------|--------------------|
-| Bag-of-Words       | ~88%               |
-| TF-IDF             | ~89%               |
-| Word2Vec (AraVec)  | ~88%               |
+| Representation    | Best test accuracy | Best model     |
+|-------------------|--------------------|----------------|
+| Bag-of-Words      | 87.8%              | XGBoost        |
+| TF-IDF            | 88.6%              | SVM (linear)   |
+| Word2Vec (AraVec) | 88.6%              | Neural network |
 
-TF-IDF features with tuned classifiers performed best on this dataset.
+TF-IDF with a linear SVM and the Word2Vec-based neural model both reached **88.6%** — the best results on this dataset.
+
 
 ## How to run
 
